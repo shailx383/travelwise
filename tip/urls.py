@@ -82,4 +82,6 @@ urlpatterns = [
     path('Mexico_edit', finalviews.Mexico_edit),
     path('Australia_edit', finalviews.Australia_edit),
     path('NewZealand_edit', finalviews.NZ_edit),
+    url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 ]
