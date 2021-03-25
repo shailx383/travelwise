@@ -22,9 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '5jsoshhvdja6@uh&d0@okc(fvu09z38u2)l+lh0@11k+55om@5'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'travelwiseproject.herokuapp.com/']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

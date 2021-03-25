@@ -15,8 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.views.static import serve
-from django.conf.urls import url
 from addUser import views as addviews
 from plan1 import views as plan1views
 from final import views as finalviews
@@ -84,6 +82,4 @@ urlpatterns = [
     path('Mexico_edit', finalviews.Mexico_edit),
     path('Australia_edit', finalviews.Australia_edit),
     path('NewZealand_edit', finalviews.NZ_edit),
-    url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
-    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 ]
