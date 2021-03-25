@@ -57,7 +57,6 @@ uvicorn==0.13.4
 whitenoise==5.2.0
 xlrd==1.2.0
 zope.interface==5.2.0
-=======
 asgiref==3.3.1
 attrs==20.3.0
 autobahn==20.7.1
