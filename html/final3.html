@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Itinerary</title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+          {% load bootstrap4 %}
+   {% bootstrap_css %}
+   {% bootstrap_javascript jquery='full' %}
+   </head>
+<body><center>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">TravelWise</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="add">Register New</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login">Log off</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<header class="bg-success py-4 mb-1">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-lg-99">
+          <h1 class="display-10 text-white mt-5 mb-1">{{logged_in.first_name}}, here are your itinerary options:</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+</br>
+    <h1>Itinerary 3: Trip to {{country}}</h1>
+    <hr>
+    <h3>Flight details: {{f_info.Name}} from {{data1.city}} to {{first}}</h3>
+    <h3>({{f_info.Class}})</h3>
+    <h3>Arrival: {{data2.start_date}}</h3>
+    <br>
+
+    <hr/>
+    {% for city, attr in info.items %}
+      <center>
+    <div class="agenda">
+        <div class="table-responsive">
+            <h2>{{city}}</h2><hr>
+            <h4>Accomodation details:</h4>
+            <h5>{{attr.accs.type}}: {{attr.accs.name}}</h5>
+            <h5>Price: ${{attr.accs.price}} per night</h5>
+            <table class="table table-condensed table-bordered">
+                <thead>
+                    <tr>
+
+                        <th>Time</th>
+                        <th>Mode of Transport</th>
+                        <th>Attraction</th>
+                        <th>Description</th>
+                        <th>Picture</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Single event in a single day -->
+
+                        {% for a, data in attr.attrs.items %}
+                        <tr>
+                        <td class="agenda-time">
+                            <h4>Day {{data.day}}: {{data.date}}</h4><hr>
+                            <h5>{{data.time}}</h5>
+                        </td>
+                        <td class="agenda-events">
+                            <div class="agenda-event">
+                                <i class="glyphicon glyphicon-repeat text-muted" title="Repeating event"></i> 
+                                {{data.mode.tran_name}} ({{data.mode.type}})<hr>
+                                {{data.mode.clas}}
+                            </div>
+                        </td>
+                        <td class = "agenda-events">
+                            <div class="agenda-event">
+                            {{a}}
+                            </div>
+
+                        </td>
+                        <td class = "agenda-events">
+
+                            <div class="agenda-event">
+                            {{data.desc}}
+                            </div>
+
+                        </td>
+                        <td>
+                            {% load static %}
+                                <img src="{% static data.img %}"  alt="img" height = "200">
+                        </td>
+                        {% endfor %}
+                    </tr>
+                    <hr>
+                </tbody>
+            </table>
+             {% endfor %}
+    <h3>Return Flight: {{f_info.Name}} from {{first}} to {{data1.city}}</h3>
+    <h3>({{f_info.Class}})</h3>
+    <h3>Arrival: {{last}}</h3>
+    <br><hr>
+            <h2>Total cost: ${{cost}}.00 (USD)</h2>
+            <hr>
+            <div class="ui-group-buttons">
+                <a class="btn btn-success btn-lg" href="prev">Save Itineraries &raquo;</a>
+            </div>
+            <br>
+            </center>
+        </div>
+    </div>
+</div>

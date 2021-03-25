@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Planning</title>
+
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    {% load bootstrap4 %}
+   {% bootstrap_css %}
+   {% bootstrap_javascript jquery='full' %}
+    <!-- Font Awesome -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js" integrity="sha256-VBLiveTKyUZMEzJd6z2mhfxIqz3ZATCuVMawPZGzIfA=" crossorigin="anonymous"></script>
+
+    <!-- Tempus Dominus Bootstrap 4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/css/tempusdominus-bootstrap-4.min.css" integrity="sha256-XPTBwC3SBoWHSmKasAk01c08M6sIA5gF5+sRxqak2Qs=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js" integrity="sha256-z0oKYg6xiLq3yJGsp/LsY9XykbweQlHl42jHv2XTBz4=" crossorigin="anonymous"></script>
+
+  </head>
+<body><center>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">TravelWise</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="add">Register New</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login">Log off</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<header class="bg-success py-4 mb-1">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-lg-99">
+          <h1 class="display-10 text-white mt-5 mb-1"></h1>
+        </div>
+      </div>
+    </div>
+  </header>
+</br>
+    <form class="form-horizontal" method="post" action="#">
+        {%csrf_token%}
+<div class="container">
+    <div class="container">
+      <div class="col-md-8 mb-5">
+          <h2>What is your destination?</h2>
+      </div></div></div><hr>
+    <center><div class="container">
+<div class="container">
+      </div></div>
+                        <div class="form-group">
+                                <label for="budget_min">Enter Desitnation:</label><br>
+                                <input type="text" name="dest" id="dest" class="form-control" placeholder="Enter City Name">
+                            </div>
+
+                        
+                        <div class="container">
+<div class="container">
+      </div></div><hr>
+                        <div class="form-group">
+                                <label for="budget_min">Enter Minimum Budget:</label><br>
+                                <input type="number" name="budget_min" id="budget_min" class="form-control">
+                            </div>
+                        <div class="form-group">
+                                <label for="budget_max">Enter Maximum Budget:</label><br>
+                                <input type="number" name="budget_max" id="budget_max" class="form-control">
+                            </div>
+
+                        <div class="form-group">
+                                      <input type="submit" formaction="/plan_2?b=b1" name="submit" class="btn btn-success btn-md" value="Next">
+                        </div>
+                    </div></div></center></form>
+    <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; TravelWise 2020</p>
+    </div>
+    <!-- /.container -->
+    </footer></center></body></html>

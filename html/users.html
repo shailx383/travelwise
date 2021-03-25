@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>User List</title>
+</head>
+<body class="container"><center>
+    <h1>List of Users:</h1>
+    {% if lst %}
+    <form action="'#" method="post">
+        {% csrf_token %}
+        <table class="striped bordered">
+            <tr bgcolor="#d5d7db">
+                <td>Select</td>
+                <td>Username</td>
+                <td>Password</td>
+            </tr>
+
+
+            </tr>
+        </table>
+    </form>
+</center>
+</body>
+</html>

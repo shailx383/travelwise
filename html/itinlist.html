@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Your Itineraries</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <!-- Custom styles for this template -->
+  <link href="css/business-frontpage.css" rel="stylesheet">
+
+</head>
+
+<body><center>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">TravelWise</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="add">Register New</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login">Log off</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<header class="bg-success py-4 mb-1">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-lg-99">
+          <h1 class="display-10 text-white mt-5 mb-1">{{logged_in}}, here are your itineraries:</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  </br></br>
+
+    {% if len == 0 %}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 class="mt-5">No itineraries yet!</h1>
+        <a class="btn btn-success btn-lg" href="plan_1">Create Itinerary &raquo;</a>
+          <ul class="list-unstyled">
+        </ul>
+      </div>
+    </div>
+  </div>
+    {% else %}
+    {%for itin in lst %}
+    <div class="ui-group-buttons">
+      <h2>Trip to {{itin.country}}</h2><br>
+                <a href="{{itin.country|cut:" "}}" class="btn btn-primary btn-lg">Finalize &raquo;</a>
+                <a href="{{itin.countryedit|cut:" "}}" class="btn btn-warning btn-lg">Edit &raquo;</a>
+            </div><hr><br>
+    {% endfor %}
+  <a class="btn btn-success btn-lg" href="plan_1">Create New Itineraries &raquo;</a> <br><br>
+    <a href="del" class="btn btn-danger btn-lg">Delete Itineraries &raquo;</a>
+    <br> <br>
+    <br><br>
+    {% endif %}
+
+</center></body>
+<footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; TravelWise 2020</p>
+    </div>
+    <!-- /.container -->
+    </footer></center></body></html>
