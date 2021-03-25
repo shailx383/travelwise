@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.views.static import serve
+from django.conf.urls import url
 from addUser import views as addviews
 from plan1 import views as plan1views
 from final import views as finalviews
