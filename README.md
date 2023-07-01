@@ -1,2 +1,2 @@
-# travelwise
+# Travelwise
 Travel Itinerary Planner
